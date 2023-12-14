@@ -1,0 +1,54 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "VTOL VR Config",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#sections"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.operator",
+				"match": "(=|<|>|;)"
+			}]
+		},		
+		"sections": {
+			"name": "constant.other",
+			"begin": "^\\t*\\w+\\n",
+			"end": "\\t*\\{"
+		},
+		"variables": {
+			"name": "variable.name",
+			"match": "^.*(?==)"
+		},
+		"constants": {
+			"name": "constant.language",
+			"match": "(?<==) (null|True|False)"
+		},
+		"numbers": {
+			"name": "constant.numeric",
+			"match": "( ?)-?\\d+(.?\\d+)?((E-)\\d+)?"
+		},
+		"strings": {
+			"name": "string.unquoted",
+			"match": "(?<==) [^\\(\\[].*"
+		}
+	},
+	"scopeName": "source.vts"
+}

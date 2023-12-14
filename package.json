@@ -1,0 +1,41 @@
+{
+  "name": "vtol-vr-confignode",
+  "displayName": "VTOL VR ConfigNode",
+  "description": "Provides language support for VTOL VR's ConfigNode structure, including .vtc, .vtm, and .vts files.",
+  "preview": true,
+  "version": "0.0.1",
+  "publisher": "garageagle",
+  "repository": {
+    "url": "https://github.com/garageagleMC/vtol-vr-confignode"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "vts",
+      "aliases": ["VTOL VR ConfigNode", "vts"],
+      "extensions": [".vtc",".vtm",".vts"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "dark": "icons/icon_dark.jpg",
+        "light": "icons/icon_dark.jpg"
+      }
+    }],
+    "grammars": [{
+      "language": "vts",
+      "scopeName": "source.vts",
+      "path": "./syntaxes/vts.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "vts",
+        "path": "snippets/snippets.json"
+      }
+    ]
+  }
+}
